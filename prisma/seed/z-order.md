@@ -1,0 +1,21 @@
+Settings
+        ↓
+Category
+        ↓
+Color
+        ↓
+Attribute
+        ↓
+AttributeValue
+        ↓
+Collection
+        ↓
+Banner
+        ↓
+Product
+        ↓
+ProductImage
+ProductFeature
+ProductVariant
+ProductAttribute
+CollectionProduct

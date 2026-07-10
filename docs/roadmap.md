@@ -13,7 +13,7 @@
 
 ## 🟡 Phase 3: Database & Authentication
 - [x] **8. Database Design** (Define Prisma Schema models and relationships)
-- [ ] **9. Authentication Setup** (Configure Better-Auth, Providers, and Session)
+- [x] **9. Authentication Setup** (Configure Better-Auth, Providers, and Session)
 - [ ] **10. Seed Data** (Write scripts to populate database with test products)
 
 ## 🔵 Phase 4: UI & Global Layouts

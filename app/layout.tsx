@@ -29,7 +29,6 @@ export default function RootLayout({
     >
       <body className="min-h-full">
         <MainProvider>{children}</MainProvider>
-        سلام
         <Toaster />
       </body>
     </html>
