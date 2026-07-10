@@ -1,0 +1,65 @@
+layouts:
+- main layout : (all pages)
+	- navigation
+	- children
+	- footer
+- site layout:(products , products details)
+	- breadcrumb
+- checkout layout:(checkout , payment , cart)
+	- shoping route
+
+*main layout*:(
+- home
+	- hero
+	- Product categoreis
+	- Discounted product
+	- promo banner
+	- comments
+- account
+	- userbox and tabs
+	- account
+	- order tracking
+	- favorite
+	- exit
+- *store layout*:*(
+	- products
+		- header
+		- products list
+		- filters
+	- products detail
+		- product gallery
+		- product info
+		- product tabs
+		- related products
+	- contact us
+		- contact info
+		- contact form
+		- map
+	- terms
+		- title
+		- paragraphs
+	- about
+		- about site
+		- feature store
+		- time line
+		- faq
+	)
+- *checkout layout*:*(
+	- cart
+		- cart items
+		- orders summary
+	- checkout
+		- shiping
+		- orders summary
+	- payment
+		- payment section
+		- orders summary
+	)
+)
+- auth
+	- wide:(dialog)
+		- auth section
+		- image
+	- narrow:
+		- title
+		- form

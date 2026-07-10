@@ -1,0 +1,339 @@
+/* .Base__Primary{
+  background: #b19276;
+}
+.Base__White{
+  background: #ffffff;
+}
+.Base__Black{
+  background: #0b0c17;
+}
+.Primary__Tint__01{
+  background: #f7f4f1;
+}
+.Primary__Tint__02{
+  background: #efe9e4;
+}
+.Primary__Tint__03{
+  background: #e8ded6;
+}
+.Primary__Tint__04{
+  background: #e0d3c8;
+}
+.Primary__Tint__05{
+  background: #d8c8bb;
+}
+.Primary__Tint__06{
+  background: #d0bead;
+}
+.Primary__Tint__07{
+  background: #c8b39f;
+}
+.Primary__Tint__08{
+  background: #c1a891;
+}
+.Primary__Tint__09{
+  background: #b99d84;
+}
+.Primary__Shade__01{
+  background: #9f836a;
+}
+.Primary__Shade__02{
+  background: #8e755e;
+}
+.Primary__Shade__03{
+  background: #7c6653;
+}
+.Primary__Shade__04{
+  background: #6a5847;
+}
+.Primary__Shade__05{
+  background: #59493b;
+}
+.Primary__Shade__06{
+  background: #473a2f;
+}
+.Primary__Shade__07{
+  background: #352c23;
+}
+.Primary__Shade__08{
+  background: #231d18;
+}
+.Primary__Shade__09{
+  background: #120f0c;
+}
+.Neutral__01{
+  background: #fafafa;
+}
+.Neutral__02{
+  background: #f7f7f8;
+}
+.Neutral__03{
+  background: #f2f2f3;
+}
+.Neutral__04{
+  background: #e7e7e8;
+}
+.Neutral__05{
+  background: #ceced1;
+}
+.Neutral__06{
+  background: #b6b6b9;
+}
+.Neutral__07{
+  background: #9d9ea2;
+}
+.Neutral__08{
+  background: #85858b;
+}
+.Neutral__09{
+  background: #6d6d74;
+}
+.Neutral__10{
+  background: #54555d;
+}
+.Neutral__11{
+  background: #3c3d45;
+}
+.Neutral__12{
+  background: #2e2f39;
+}
+.Neutral__13{
+  background: #23242e;
+}
+.State__Warning__Primary{
+  background: #ffc107;
+}
+.State__Warning__Tint__01{
+  background: #fffcf5;
+}
+.State__Warning__Tint__02{
+  background: #fff4d4;
+}
+.State__Warning__Tint__03{
+  background: #ffe9a8;
+}
+.State__Warning__Tint__04{
+  background: #ffdf7d;
+}
+.State__Warning__Shade__01{
+  background: #cc9a06;
+}
+.State__Warning__Shade__02{
+  background: #997404;
+}
+.State__Warning__Shade__03{
+  background: #664d03;
+}
+.State__Warning__Shade__04{
+  background: #332701;
+}
+.State__Success__Primary{
+  background: #32cd32;
+}
+.State__Success__Tint__01{
+  background: #f3fdf3;
+}
+.State__Success__Tint__02{
+  background: #cbf5cb;
+}
+.State__Success__Tint__03{
+  background: #9cec9c;
+}
+.State__Success__Tint__04{
+  background: #6fe36f;
+}
+.State__Success__Shade__01{
+  background: #28a428;
+}
+.State__Success__Shade__02{
+  background: #1e7b1e;
+}
+.State__Success__Shade__03{
+  background: #145214;
+}
+.State__Success__Shade__04{
+  background: #0a290a;
+}
+.State__Info__Primary{
+  background: #1e90ff;
+}
+.State__Info__Tint__01{
+  background: #f4f9ff;
+}
+.State__Info__Tint__02{
+  background: #d4eaff;
+}
+.State__Info__Tint__03{
+  background: #a9d5ff;
+}
+.State__Info__Tint__04{
+  background: #7dbfff;
+}
+.State__Info__Shade__01{
+  background: #1873cc;
+}
+.State__Info__Shade__02{
+  background: #125699;
+}
+.State__Info__Shade__03{
+  background: #0c3a66;
+}
+.State__Info__Shade__04{
+  background: #061d33;
+}
+.State__Error__Primary{
+  background: #ff6666;
+}
+.State__Error__Shade__01{
+  background: #cc5252;
+}
+.State__Error__Shade__02{
+  background: #993d3d;
+}
+.State__Error__Shade__03{
+  background: #662929;
+}
+.State__Error__Shade__04{
+  background: #331414;
+}
+.State__Error__Tint__01{
+  background: #ffe0e0;
+}
+.State__Error__Tint__02{
+  background: #ffc2c2;
+}
+.State__Error__Tint__03{
+  background: #ffa3a3;
+}
+.State__Error__Tint__04{
+  background: #ff8585;
+} */
+
+:root {
+  /* Base */
+  --base-primary: #b19276;
+  --base-white: #ffffff;
+  --base-black: #0b0c17;
+
+  /* Primary Tints */
+  --primary-50: #f7f4f1;
+  --primary-100: #efe9e4;
+  --primary-200: #e8ded6;
+  --primary-300: #e0d3c8;
+  --primary-400: #d8c8bb;
+  --primary-500: #d0bead;
+  --primary-600: #c8b39f;
+  --primary-700: #c1a891;
+  --primary-800: #b99d84;
+  --primary-900: #b19276;
+
+  /* Primary Shades */
+  --primary-950: #9f836a;
+  --primary-975: #8e755e;
+  --primary-1000: #7c6653;
+  --primary-1100: #6a5847;
+  --primary-1200: #59493b;
+  --primary-1300: #473a2f;
+  --primary-1400: #352c23;
+  --primary-1500: #231d18;
+  --primary-1600: #120f0c;
+
+  /* Neutral */
+  --neutral-50: #fafafa;
+  --neutral-100: #f7f7f8;
+  --neutral-200: #f2f2f3;
+  --neutral-300: #e7e7e8;
+  --neutral-400: #ceced1;
+  --neutral-500: #b6b6b9;
+  --neutral-600: #9d9ea2;
+  --neutral-700: #85858b;
+  --neutral-800: #6d6d74;
+  --neutral-900: #54555d;
+  --neutral-950: #3c3d45;
+  --neutral-975: #2e2f39;
+  --neutral-1000: #23242e;
+
+  /* Warning */
+  --warning: #ffc107;
+  --warning-50: #fffcf5;
+  --warning-100: #fff4d4;
+  --warning-200: #ffe9a8;
+  --warning-300: #ffdf7d;
+  --warning-700: #cc9a06;
+  --warning-800: #997404;
+  --warning-900: #664d03;
+  --warning-950: #332701;
+
+  /* Success */
+  --success: #32cd32;
+  --success-50: #f3fdf3;
+  --success-100: #cbf5cb;
+  --success-200: #9cec9c;
+  --success-300: #6fe36f;
+  --success-700: #28a428;
+  --success-800: #1e7b1e;
+  --success-900: #145214;
+  --success-950: #0a290a;
+
+  /* Info */
+  --info: #1e90ff;
+  --info-50: #f4f9ff;
+  --info-100: #d4eaff;
+  --info-200: #a9d5ff;
+  --info-300: #7dbfff;
+  --info-700: #1873cc;
+  --info-800: #125699;
+  --info-900: #0c3a66;
+  --info-950: #061d33;
+
+  /* Error */
+  --error: #ff6666;
+  --error-50: #ffe0e0;
+  --error-100: #ffc2c2;
+  --error-200: #ffa3a3;
+  --error-300: #ff8585;
+  --error-700: #cc5252;
+  --error-800: #993d3d;
+  --error-900: #662929;
+  --error-950: #331414;
+
+  /* shadcn semantic tokens */
+  --background: var(--base-white);
+  --foreground: var(--base-black);
+
+  --card: var(--base-white);
+  --card-foreground: var(--base-black);
+
+  --popover: var(--base-white);
+  --popover-foreground: var(--base-black);
+
+  --primary: var(--base-primary);
+  --primary-foreground: var(--base-white);
+
+  --secondary: var(--neutral-100);
+  --secondary-foreground: var(--base-black);
+
+  --muted: var(--neutral-200);
+  --muted-foreground: var(--neutral-700);
+
+  --accent: var(--primary-100);
+  --accent-foreground: var(--base-black);
+
+  --destructive: var(--error);
+  --destructive-foreground: var(--base-white);
+
+  --border: var(--neutral-300);
+  --input: var(--neutral-300);
+  --ring: var(--primary);
+
+  --sidebar: var(--neutral-50);
+  --sidebar-foreground: var(--base-black);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--base-white);
+  --sidebar-accent: var(--primary-100);
+  --sidebar-accent-foreground: var(--base-black);
+  --sidebar-border: var(--neutral-300);
+  --sidebar-ring: var(--primary);
+
+  --radius: 0.625rem;
+}
