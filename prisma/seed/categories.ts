@@ -1,67 +1,71 @@
 import db from "@/db";
 import { faSlugify } from "@/lib/utils";
 
-const categories = [
+export const categories = [
   {
     name: "پیراهن کوتاه",
-    slug: faSlugify("پیراهن کوتاه"),
-  },
-  {
-    name: "پیراهن بلند",
-    slug: faSlugify("پیراهن بلند"),
+    subCategories: ["مجلسی", "مخمل", "ساده", "گیپور"],
   },
   {
     name: "شلوار",
-    slug: faSlugify("شلوار"),
-  },
-  {
-    name: "دامن",
-    slug: faSlugify("دامن"),
+    subCategories: ["کلاسیک", "جین", "مام استایل", "مجلسی"],
   },
   {
     name: "کت و جلیقه",
-    slug: faSlugify("کت و جلیقه"),
+    subCategories: ["جین", "مازراتی", "رسمی"],
   },
   {
     name: "تاپ و کراپ",
-    slug: faSlugify("تاپ و کراپ"),
+    subCategories: ["جلو زیپ", "ورزشی", "بند دار", "بدون فنر"],
   },
   {
     name: "سرهمی",
-    slug: faSlugify("سرهمی"),
+    subCategories: ["جین", "ابر و بادی", "مجلسی"],
   },
   {
     name: "شومیز و بلوز",
-    slug: faSlugify("شومیز و بلوز"),
+    subCategories: ["بافت", "کبریتی", "نخی", "ساحلی"],
   },
   {
     name: "ترنچ کت و پالتو",
-    slug: faSlugify("ترنچ کت و پالتو"),
+    subCategories: ["کلاه‌دار", "بارانی", "کوتاه", "چرم"],
   },
   {
-    name: "هودی و سویشرت",
-    slug: faSlugify("هودی و سویشرت"),
+    name: "دامن",
+    subCategories: ["راسته", "بلند", "کوتاه"],
   },
-  {
-    name: "بافت و پلیور",
-    slug: faSlugify("بافت و پلیور"),
-  },
-  {
-    name: "ست لباس",
-    slug: faSlugify("ست لباس"),
-  },
-  {
-    name: "لباس راحتی",
-    slug: faSlugify("لباس راحتی"),
-  },
-  {
-    name: "لباس ورزشی",
-    slug: faSlugify("لباس ورزشی"),
-  },
-];
+].map(({ name, subCategories }) => ({
+  name,
+  slug: faSlugify(name),
+  subCategories: subCategories.map((subName) => ({
+    name: subName,
+    slug: `${faSlugify(name)}-${faSlugify(subName)}`,
+  })),
+}));
 
 export default async function seedCategories() {
-  await db.category.createMany({
-    data: categories,
-  });
+  for (const { name, slug, subCategories } of categories) {
+    const parentCategory = await db.category.upsert({
+      where: { slug },
+      update: {},
+      create: {
+        name,
+        slug,
+      },
+    });
+
+    if (subCategories && subCategories.length) {
+      for (const sub of subCategories) {
+        await db.category.upsert({
+          where: { slug: sub.slug },
+          update: {},
+          create: {
+            name: sub.name,
+            slug: sub.slug,
+            parentId: parentCategory.id,
+          },
+        });
+      }
+    }
+  }
 }

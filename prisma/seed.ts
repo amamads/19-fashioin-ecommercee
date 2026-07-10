@@ -1,14 +1,21 @@
 import db from "@/db";
 import seedCategories from "./seed/categories";
-import seedSetting from "./seed/settings";
-import seedColors from "./seed/Colors";
+import seedSettings from "./seed/settings";
 import seedAttributes from "./seed/attributes";
+import seedBanners from "./seed/banners";
+import seedColors from "./seed/colors";
+import seedProducts from "./seed/products";
+import deleteSeeds from "./seed/deleteSeeds";
 
 async function main() {
-  await seedSetting();
+  await deleteSeeds();
+  
+  await seedSettings();
   await seedCategories();
   await seedColors();
   await seedAttributes();
+  await seedBanners();
+  await seedProducts();
 }
 main()
   .catch(console.error)

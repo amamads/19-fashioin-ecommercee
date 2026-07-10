@@ -88,12 +88,16 @@ model Verification {
 }
 
 model Category {
-  id        String    @id @default(cuid())
-  name      String
-  slug      String    @unique
-  products  Product[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  products    Product[]
+  parentId    String?
+  parent      Category?  @relation("CategoryToSubCategory", fields: [parentId], references: [id], onDelete: Cascade)
+  subCategories Category[] @relation("CategoryToSubCategory")
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Product {

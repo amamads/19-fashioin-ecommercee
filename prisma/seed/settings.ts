@@ -14,8 +14,10 @@ const setting = {
   //   telegram: "https://t.me/modernshop",
   //   whatsapp: "https://wa.me/989121234567",
 };
-export default async function seedSetting() {
-  await db.setting.create({
-    data: setting,
+export default async function seedSettings() {
+  await db.setting.upsert({
+    where: { id: setting.id },
+    update: setting,
+    create: setting,
   });
 }

@@ -14,7 +14,7 @@
 ## 🟡 Phase 3: Database & Authentication
 - [x] **8. Database Design** (Define Prisma Schema models and relationships)
 - [x] **9. Authentication Setup** (Configure Better-Auth, Providers, and Session)
-- [ ] **10. Seed Data** (Write scripts to populate database with test products)
+- [x] **10. Seed Data** (Write scripts to populate database with test products)
 
 ## 🔵 Phase 4: UI & Global Layouts
 - [ ] **11. Global Layout Setup** (Create Root Layout, Navbar, Footer, and Providers)
