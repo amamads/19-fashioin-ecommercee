@@ -1,3 +1,4 @@
+'use client'
 import { ThemeProvider as Theme_provider } from "next-themes";
 import { PropsWithChildren } from "react";
 
@@ -6,7 +7,6 @@ export default function ThemeProvider({ children }: PropsWithChildren) {
     <Theme_provider
       attribute="class"
       defaultTheme="light"
-      enableSystem
       disableTransitionOnChange
     >
       {children}

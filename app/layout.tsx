@@ -1,13 +1,32 @@
 import { cn } from "@/lib/utils";
 import MainProvider from "@/providers";
 import type { Metadata } from "next";
-import { Vazirmatn } from "next/font/google";
-import { Toaster } from "sonner";
+import localFont from "next/font/local";
 import "./globals.css";
 
-export const vazirmatn = Vazirmatn({
-  subsets: ["arabic", "latin"],
-  variable: "--font-sans",
+export const vazir = localFont({
+  src: [
+    {
+      path: "../fonts/Vazir-light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Vazir.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Vazir-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Vazir-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   display: "swap",
 });
 
@@ -25,11 +44,10 @@ export default function RootLayout({
     <html
       lang="fa"
       dir="rtl"
-      className={cn("h-full", "antialiased", vazirmatn.variable)}
+      className={cn("h-full", "antialiased", vazir.className)}
     >
-      <body className="min-h-full">
+      <body className="min-h-full max-w-360 min-w-97.5">
         <MainProvider>{children}</MainProvider>
-        <Toaster />
       </body>
     </html>
   );

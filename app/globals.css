@@ -39,60 +39,164 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --color-primary-shade-9: var(--primary-shade-9);
+  --color-primary-shade-8: var(--primary-shade-8);
+  --color-primary-shade-7: var(--primary-shade-7);
+  --color-primary-shade-6: var(--primary-shade-6);
+  --color-primary-shade-5: var(--primary-shade-5);
+  --color-primary-shade-4: var(--primary-shade-4);
+  --color-primary-shade-3: var(--primary-shade-3);
+  --color-primary-shade-2: var(--primary-shade-2);
+  --color-primary-shade-1: var(--primary-shade-1);
+  --color-primary-tint-9: var(--primary-tint-9);
+  --color-primary-tint-8: var(--primary-tint-8);
+  --color-primary-tint-7: var(--primary-tint-7);
+  --color-primary-tint-6: var(--primary-tint-6);
+  --color-primary-tint-5: var(--primary-tint-5);
+  --color-primary-tint-4: var(--primary-tint-4);
+  --color-primary-tint-3: var(--primary-tint-3);
+  --color-primary-tint-2: var(--primary-tint-2);
+  --color-primary-tint-1: var(--primary-tint-1);
+
+  --color-neutral-13: var(--neutral-13);
+  --color-neutral-12: var(--neutral-12);
+  --color-neutral-11: var(--neutral-11);
+  --color-neutral-10: var(--neutral-10);
+  --color-neutral-9: var(--neutral-9);
+  --color-neutral-8: var(--neutral-8);
+  --color-neutral-7: var(--neutral-7);
+  --color-neutral-6: var(--neutral-6);
+  --color-neutral-5: var(--neutral-5);
+  --color-neutral-4: var(--neutral-4);
+  --color-neutral-3: var(--neutral-3);
+  --color-neutral-2: var(--neutral-2);
+  --color-neutral-1: var(--neutral-1);
 }
+
 :root {
+  /* Base */
   --background: #ffffff;
-  --foreground: #0b0c17;
+  --foreground: #0B0C17;
 
-  --card: #ffffff;
-  --card-foreground: #0b0c17;
-
-  --popover: #ffffff;
-  --popover-foreground: #0b0c17;
-
+  /* Primary */
   --primary: #b19276;
   --primary-foreground: #ffffff;
 
-  --secondary: #f7f7f8;
-  --secondary-foreground: #0b0c17;
+  --primary-shade-9: #120F0C;
+  --primary-shade-8: #231D18;
+  --primary-shade-7: #352C23;
+  --primary-shade-6: #473A2F;
+  --primary-shade-5: #59493B;
+  --primary-shade-4: #6A5847;
+  --primary-shade-3: #7C6653;
+  --primary-shade-2: #8E755E;
+  --primary-shade-1: #9F836A;
 
-  --muted: #f2f2f3;
-  --muted-foreground: #85858b;
+  --primary-tint-9: #B99D84;
+  --primary-tint-8: #C1A891;
+  --primary-tint-7: #C8B39F;
+  --primary-tint-6: #D0BEAD;
+  --primary-tint-5: #D8C8BB;
+  --primary-tint-4: #E0D3C8;
+  --primary-tint-3: #E8DED6;
+  --primary-tint-2: #EFE9E4;
+  --primary-tint-1: #f7f4f1;
 
-  --accent: #efe9e4;
-  --accent-foreground: #0b0c17;
+  /* Neutral */
+  --neutral-13: #23242E;
+  --neutral-12: #2E2F39;
+  --neutral-11: #3C3D45;
+  --neutral-10: #54555d;
+  --neutral-9: #6c6c74;
+  --neutral-8: #85858b;
+  --neutral-7: #a0a0a2;
+  --neutral-6: #b8b8b9;
+  --neutral-5: #cfcfd1;
+  --neutral-4: #e7e7e8;
+  --neutral-3: #f2f2f3;
+  --neutral-2: #f7f7f8;
+  --neutral-1: #fafafa;
 
+  /* Success */
+  --success: #32cd32;
+  --success-shade-4: #0a290a;
+  --success-shade-3: #145214;
+  --success-shade-2: #1E7B1E;
+  --success-shade-1: #28a428;
+  --success-tint-4: #6fdf6f;
+  --success-tint-3: #9ce99c;
+  --success-tint-2: #CBF5CB;
+  --success-tint-1: #f3fcf3;
+
+  /* Error */
   --destructive: #ff6666;
-  --destructive-foreground: #ffffff;
+  --destructive-shade-4: #331414;
+  --destructive-shade-3: #662929;
+  --destructive-shade-2: #993d3d;
+  --destructive-shade-1: #cc5252;
+  --destructive-tint-4: #ff8585;
+  --destructive-tint-3: #FFA3A3;
+  --destructive-tint-2: #FFC2C2;
+  --destructive-tint-1: #fff0f0;
 
-  --border: #e7e7e8;
-  --input: #e7e7e8;
-  --ring: #b19276;
+  /* Warning */
+  --warning: #ffc107;
+  --warning-shade-4: #332701;
+  --warning-shade-3: #664d03;
+  --warning-shade-2: #997404;
+  --warning-shade-1: #cc9a06;
+  --warning-tint-4: #FFDF7D;
+  --warning-tint-3: #FFE9A8;
+  --warning-tint-2: #FFF4D4;
+  --warning-tint-1: #FFFCF5;
 
-  --chart-1: #b19276;
-  --chart-2: #9f836a;
-  --chart-3: #7c6653;
-  --chart-4: #59493b;
-  --chart-5: #352c23;
+  /* Info */
+  --info: #1e90ff;
+  --info-shade-4: #061c33;
+  --info-shade-3: #0c3a66;
+  --info-shade-2: #125699;
+  --info-shade-1: #1873cc;
+  --info-tint-4: #70b7ff;
+  --info-tint-3: #a3d2ff;
+  --info-tint-2: #d1e8ff;
+  --info-tint-1: #f4f9ff;
 
-  --sidebar: #fafafa;
-  --sidebar-foreground: #0b0c17;
-  --sidebar-primary: #b19276;
+  /* Shadcn */
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+
+  --secondary: var(--neutral-2);
+  --secondary-foreground: var(--foreground);
+
+  --muted: var(--neutral-3);
+  --muted-foreground: var(--neutral-8);
+
+  --accent: var(--primary-tint-3);
+  --accent-foreground: var(--foreground);
+
+
+  --border: var(--neutral-4);
+  --input: var(--neutral-4);
+  --ring: var(--primary);
+
+  --sidebar: var(--neutral-1);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #efe9e4;
-  --sidebar-accent-foreground: #0b0c17;
-  --sidebar-border: #e7e7e8;
-  --sidebar-ring: #b19276;
-
-  --radius: 0.625rem;
+  --sidebar-accent: var(--primary-tint-3);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--neutral-4);
+  --sidebar-ring: var(--primary);
 }
+
 /* :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -166,10 +270,40 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+}
+
+@layer components {
+  .px-default {
+    @apply mx-auto px-5 sm:px-12
+  }
+
+  .overflow-auto::-webkit-scrollbar {
+    @apply bg-transparent size-4;
+  }
+
+  .overflow-auto::-webkit-scrollbar-thumb {
+    @apply bg-muted/80 rounded-lg;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .overflow-auto::-webkit-scrollbar-track {
+    @apply bg-transparent
+  }
+
+  .overflow-auto::-webkit-scrollbar-corner {
+    @apply bg-transparent
+  }
+
+  .col-flex {
+    @apply flex flex-col;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
   }
 }

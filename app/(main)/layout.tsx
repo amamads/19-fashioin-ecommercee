@@ -1,4 +1,5 @@
 import Footer from "@/shared/components/Footer";
+import LayoutContainer from "@/shared/components/LayoutContainer";
 import Navbar from "@/shared/components/Navbar";
 import type { Metadata } from "next";
 
@@ -13,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className={`h-full antialiased`}>
+    <main>
       <Navbar />
-      {children}
+      <LayoutContainer>{children}</LayoutContainer>
       <Footer />
     </main>
   );
