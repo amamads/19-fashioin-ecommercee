@@ -43,9 +43,7 @@ export default function Navbar() {
           <Button variant="ghost" size="none">
             <Search className="h-5 p-3.5 box-content text-muted-foreground" />
           </Button>
-          <Button variant="ghost" size="none">
-            <Menu className="h-5 p-3.5 box-content text-muted-foreground" />
-          </Button>
+         
         </div>
       </nav>
       <Separator />
