@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="col-flex gap-3">
         <Logo />
 
-        <BodyXs className="text-justify">
+        <BodyXs className="text-justify text-inherit">
           به فروشگاه رگال خوش آمدید، جایی که استایل و شیک بودن به شما هدیه داده
           می‌شود. با خبرنامه رگال همراه باشید و اولین نفر باشید که اخبار،
           پیشنهادات و توصیه‌های دنیای مد و فشن را می شنوید.

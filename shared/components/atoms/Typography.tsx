@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { PropsWithClassName } from "@/shared/types";
 
 export const textStyles = {
-  base: "scroll-m-20",
+  base: "scroll-m-20 text-neutral-13",
 
   /* Display */
   display: "font-bold text-[64px] leading-[76px]",
@@ -19,16 +19,20 @@ export const textStyles = {
   h6: "text-[18px] leading-[22px] font-bold max-sm:font-semibold max-sm:text-[14px] max-sm:leading-[16px]",
 
   /* Body */
-  bodyLg: "text-[24px] leading-[40px] max-sm:text-[20px] max-sm:leading-[34px]",
-  bodyMd: "text-[20px] leading-[34px] max-sm:text-[18px] max-sm:leading-[30px]",
-  bodySm: "text-[16px] leading-[28px] max-sm:text-[16px] max-sm:leading-[28px]",
-  bodyXs: "text-[14px] leading-[24px] max-sm:text-[14px] max-sm:leading-[24px]",
+  bodyLg:
+    "text-neutral-13 text-[24px] leading-[40px] max-sm:text-[20px] max-sm:leading-[34px]",
+  bodyMd:
+    "text-neutral-13 text-[20px] leading-[34px] max-sm:text-[18px] max-sm:leading-[30px]",
+  bodySm:
+    "text-neutral-13 text-[16px] leading-[28px] max-sm:text-[16px] max-sm:leading-[28px]",
+  bodyXs:
+    "text-neutral-13 text-[14px] leading-[24px] max-sm:text-[14px] max-sm:leading-[24px]",
 
   /* Caption */
   caption:
-    "text-neutral-9 text-[14px] leading-[20px] max-sm:text-[14px] max-sm:leading-[20px]",
+    "text-neutral-9! text-[14px] leading-[20px] max-sm:text-[14px] max-sm:leading-[20px]",
   captionSm:
-    "text-neutral-9 text-[12px] leading-[18px] max-sm:text-[12px] max-sm:leading-[18px]",
+    "text-neutral-9! text-[12px] leading-[18px] max-sm:text-[12px] max-sm:leading-[18px]",
 
   /* buttons */
   buttonLg: "text-[18px] leading-[26px]",
@@ -72,7 +76,7 @@ export const H6 = createTypography("h6", textStyles.h6);
 
 export const BodyLg = createTypography("p", textStyles.bodyLg);
 export const BodyMd = createTypography("p", textStyles.bodyMd);
-export const BodySM = createTypography("p", textStyles.bodySm);
+export const BodySm = createTypography("p", textStyles.bodySm);
 export const BodyXs = createTypography("p", textStyles.bodyXs);
 
 export const Caption = createTypography("span", textStyles.caption);

@@ -39,6 +39,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -168,19 +169,19 @@
 
   /* Shadcn */
   --card: var(--background);
-  --card-foreground: var(--foreground);
+  --card-foreground: var(--neutral-11);
 
   --popover: var(--background);
-  --popover-foreground: var(--foreground);
+  --popover-foreground: var(--neutral-11);
 
   --secondary: var(--neutral-2);
-  --secondary-foreground: var(--foreground);
+  --secondary-foreground: var(--neutral-11);
 
   --muted: var(--neutral-3);
   --muted-foreground: var(--neutral-8);
 
   --accent: var(--primary-tint-3);
-  --accent-foreground: var(--foreground);
+  --accent-foreground: var(--neutral-11);
 
 
   --border: var(--neutral-4);
@@ -188,11 +189,11 @@
   --ring: var(--primary);
 
   --sidebar: var(--neutral-1);
-  --sidebar-foreground: var(--foreground);
+  --sidebar-foreground: var(--neutral-11);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: var(--primary-tint-3);
-  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-accent-foreground: var(--neutral-11);
   --sidebar-border: var(--neutral-4);
   --sidebar-ring: var(--primary);
 }
@@ -281,7 +282,7 @@
     @apply mx-auto px-5 sm:px-12
   }
 
-  .overflow-auto::-webkit-scrollbar {
+  /* .overflow-auto::-webkit-scrollbar {
     @apply bg-transparent size-4;
   }
 
@@ -297,6 +298,13 @@
 
   .overflow-auto::-webkit-scrollbar-corner {
     @apply bg-transparent
+  } */
+
+  .transition-show {
+    @apply duration-500 visible opacity-100
+  }
+  .transition-hide {
+    @apply duration-500 invisible opacity-0
   }
 
   .col-flex {
