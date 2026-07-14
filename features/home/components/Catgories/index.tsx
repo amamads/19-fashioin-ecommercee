@@ -68,35 +68,37 @@ export default function Categories({ className }: PropsWithClassName) {
       <H5>دسته بندی محصولات</H5>
       <div className="grid grid-cols-2 gap-4">
         {categories.map(({ name, imageUrl, order, badges }) => (
-          <div key={order} className="relative">
-        {categories.map(({ name, imageUrl, order, badges }) => (
-          <div key={order} className="relative">
+          <div key={order} className="relative rounded-md overflow-hidden">
             <Image
-              className="border-primary border rounded-md"
+              className="border-primary border"
               src={imageUrl}
               alt={name}
               height={920}
               width={640}
             />
-            <div className="absolute z-10 bottom-2 right-2 space-y-1">
-              <H5>{name}</H5>
+            <div className="absolute z-10 bottom-2 right-2 space-y-1  text-background">
+              <H5 className="text-inherit">{name}</H5>
               <div className="space-x-1">
                 {badges.map((badge) => (
                   <Badge
                     key={badge}
                     variant="outline"
-                    className="relative border-background/40 border-2"
+                    className="relative border-background/40 border-2 text-inherit"
                   >
-                    <span className="z-10 text-background font-light">
+                    <span className="z-10 font-light ">
                       {badge}
                     </span>
-                    <div className="absolute inset-0 bg-background/15 backdrop-blur-lg" />
+                    <div className="absolute rounded-md inset-0 bg-background/20 backdrop-blur-lg" />
                   </Badge>
                 ))}
               </div>
             </div>
+            <div className="absolute inset-0 top-2/5 bg-linear-to-b to-foreground/50"/>
           </div>
         ))}
+        {/* {categories.map((category) => (
+          <CategoryItem key={category.order} category={category as CategoryWidhBadges} />
+        ))} */}
       </div>
     </div>
   );

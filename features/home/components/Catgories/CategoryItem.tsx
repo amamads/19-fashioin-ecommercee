@@ -2,11 +2,12 @@ import { Category, Prisma } from "@/generated/prisma/client";
 import { H5 } from "@/shared/components/atoms/Typography";
 import { Badge } from "@/shared/components/ui/badge";
 import Image from "next/image";
+import { CategoryWidhBadges } from "../../types";
 
 export default function CategoryItem({
   category,
 }: {
-  category: Prisma.CategoryGetPayload<{ include: { badges: true } }>;
+  category: CategoryWidhBadges;
 }) {
   const { order, imageUrl, name, badges } = category;
   return (

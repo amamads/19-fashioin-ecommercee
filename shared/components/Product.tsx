@@ -13,7 +13,7 @@ export default function Product({ className }: PropsWithClassName) {
     ],
     price = 3_502_000;
   return (
-    <div className={cn(className, "space-y-2.5")}>
+    <div className={cn(className, "space-y-2.5")} dir="rtl">
       <div className="relative">
         <Image
           src="/product-image2.png"
@@ -23,7 +23,7 @@ export default function Product({ className }: PropsWithClassName) {
           height={239}
         />
         <button className="absolute top-3 right-3">
-          <Heart className="size-6 text-neutral-8"/>
+          <Heart className="size-6 text-neutral-8" />
         </button>
       </div>
       <BodySm>لباس میدی مدرن رایا</BodySm>

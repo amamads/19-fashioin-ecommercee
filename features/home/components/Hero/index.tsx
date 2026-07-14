@@ -4,6 +4,9 @@ import { BodyXs, H2 } from "@/shared/components/atoms/Typography";
 import { Button } from "@/shared/components/ui/button";
 import { PropsWithClassName } from "@/shared/types";
 import Banners from "./Banners";
+import { ArrowLeft } from "lucide-react";
+import paths from "@/shared/paths";
+import Link from "next/link";
 
 export default function Hero({ className }: PropsWithClassName) {
   return (
@@ -18,8 +21,11 @@ export default function Hero({ className }: PropsWithClassName) {
       </BodyXs>
       <Badges className="mt-3" />
 
-      <Button className="w-65 mt-6">
-        <span>مشاهده کالکشن ها</span>
+      <Button className="w-65 mt-6" asChild>
+        <Link className="space-x-2" href={paths.main.store.products}>
+          <span>مشاهده کالکشن ها</span>
+          <ArrowLeft />
+        </Link>
       </Button>
 
       <Banners className="mt-8" />
