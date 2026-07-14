@@ -1,9 +1,9 @@
-import HeroBadges from "@/features/home/components/Hero/HeroBadges";
+import Badges from "@/features/home/components/Hero/Badges";
 import { cn } from "@/lib/utils";
 import { BodyXs, H2 } from "@/shared/components/atoms/Typography";
 import { Button } from "@/shared/components/ui/button";
 import { PropsWithClassName } from "@/shared/types";
-import HeroBanners from "./HeroBanners";
+import Banners from "./Banners";
 
 export default function Hero({ className }: PropsWithClassName) {
   return (
@@ -16,13 +16,13 @@ export default function Hero({ className }: PropsWithClassName) {
         هر لباس با دقت و عشق طراحی شده تا به شما احساس زیبایی و اعتماد به نفس
         بدهد.
       </BodyXs>
-      <HeroBadges className="mt-3" />
+      <Badges className="mt-3" />
 
       <Button className="w-65 mt-6">
         <span>مشاهده کالکشن ها</span>
       </Button>
 
-      <HeroBanners className="mt-8" />
+      <Banners className="mt-8" />
     </div>
   );
 }

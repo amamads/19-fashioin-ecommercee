@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { PropsWithClassName } from "@/shared/types";
 import Image from "next/image";
 
-export default function HeroBanners({ className }: PropsWithClassName) {
+export default function Banners({ className }: PropsWithClassName) {
   const _banners = [
     {
       title: "banner-3",

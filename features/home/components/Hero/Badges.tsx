@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/shared/components/ui/badge";
 import { PropsWithClassName } from "@/shared/types";
 
-export default function HeroBadges({ className }: PropsWithClassName) {
+export default function Badges({ className }: PropsWithClassName) {
   const badgesName = [
     "کالکشن های متنوع",
     "مد و فشن",
@@ -10,7 +10,7 @@ export default function HeroBadges({ className }: PropsWithClassName) {
     "رنگ بندی های جذاب",
   ];
   return (
-    <div className={cn(className, "flex overflow-x-auto pb-1")}>
+    <div className={cn(className, "flex gap-1 overflow-x-auto pb-1")}>
       {badgesName.map((name, i) => (
         <Badge variant="secondary" key={i} className="border-neutral-4">
           {name}
