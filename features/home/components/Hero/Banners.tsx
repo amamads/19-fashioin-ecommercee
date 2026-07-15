@@ -28,7 +28,7 @@ export default function Banners({ className }: PropsWithClassName) {
   const banners = _banners.sort((a, b) => a.order - b.order);
 
   return (
-    <div className={cn(className, "flex gap-3 overflow-x-auto")}>
+    <div className={cn(className, "flex gap-3 overflow-x-auto no-scrollbar")}>
       {banners.map(({ title, imageUrl }) => (
         <div
           key={title}
@@ -39,21 +39,9 @@ export default function Banners({ className }: PropsWithClassName) {
             src={imageUrl}
             className="object-cover"
             fill
-            // height={312}
-            // width={254}
           />
         </div>
       ))}
-      {/* {banners.map(({ title, imageUrl }) => (
-        <Image
-          alt={title}
-          src={imageUrl}
-          className="size-37.5 object-contain"
-          height={312}
-          width={254}
-          key={title}
-        />
-      ))} */}
     </div>
   );
 }

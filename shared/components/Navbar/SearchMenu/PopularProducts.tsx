@@ -13,7 +13,7 @@ export default function PopularProducts({ className }: PropsWithClassName) {
           مشاهده همه
         </Button>
       </header>
-      <div className="flex gap-3 overflow-x-auto">
+      <div className="flex gap-3 overflow-x-auto no-scrollbar">
         {[1, 2, 3, 4].map((i) => (
           <Product key={i} />
         ))}

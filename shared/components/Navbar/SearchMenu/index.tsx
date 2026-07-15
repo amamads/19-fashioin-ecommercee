@@ -1,17 +1,22 @@
-import { PropsWithOpen } from "@/shared/types";
+import {
+  selectSearchMenuOpen,
+  useNavbarStore,
+} from "@/shared/stores/navbarStore";
 import { Separator } from "../../ui/separator";
 import CollapsibleMenu from "../CollapsibleMenu";
+import PopularProducts from "./PopularProducts";
 import PopularSearches from "./PopularSearches";
 import SearchInput from "./SearchInput";
-import PopularProducts from "./PopularProducts";
 
-export default function SearchMenu({ open }: PropsWithOpen) {
+export default function SearchMenu() {
+  const searchMenuOpen = useNavbarStore(selectSearchMenuOpen);
+
   return (
-    <CollapsibleMenu open={open} className="">
+    <CollapsibleMenu open={searchMenuOpen} className="">
       <SearchInput />
       <PopularSearches className="mt-6" />
-      <Separator className="mt-7.5"/>
-      <PopularProducts className="py-6"/>
-    </CollapsibleMenu >
+      <Separator className="mt-7.5" />
+      <PopularProducts className="py-6" />
+    </CollapsibleMenu>
   );
 }

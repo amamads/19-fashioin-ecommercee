@@ -14,7 +14,7 @@ export default function FooterLinkGroup({
     <div>
       <div className="flex items-center gap-2.5">
         <div className="rounded-full bg-background size-1.5" />
-        <H5>{title}</H5>
+        <H5 className="text-inherit">{title}</H5>
       </div>
       <ul className="grid">
         {items.map(({ name, href }) => (

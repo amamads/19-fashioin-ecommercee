@@ -13,7 +13,7 @@ export default function Product({ className }: PropsWithClassName) {
     ],
     price = 3_502_000;
   return (
-    <div className={cn(className, "space-y-2.5")} dir="rtl">
+    <div className={cn(className, "space-y-2.5")}>
       <div className="relative">
         <Image
           src="/product-image2.png"
