@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils";
 import { Caption, H5 } from "@/shared/components/atoms/Typography";
 import { Button } from "@/shared/components/ui/button";
 import { PropsWithClassName } from "@/shared/types";
-import { ArrowDownNarrowWide, ArrowRight, Funnel } from "lucide-react";
+import { ArrowRight, Funnel } from "lucide-react";
 import { useRouter } from "next/navigation";
+import SortSheet from "./SortSheet";
+import FiltersSheet from "./FiltersSheet.";
 
 export default function ProductsHeader({ className }: PropsWithClassName) {
     const router = useRouter();
@@ -22,12 +24,9 @@ export default function ProductsHeader({ className }: PropsWithClassName) {
                     تعداد محصولات: ۵۶ کالا
                 </Caption>
                 <div className="space-x-2">
-                    <Button variant='outline' size='icon' className="border-neutral-11">
-                        <Funnel className="text-neutral-11" />
-                    </Button>
-                    <Button variant='outline' size='icon' className="border-neutral-11">
-                        <ArrowDownNarrowWide className="text-neutral-11" />
-                    </Button>
+
+                    <FiltersSheet />
+                    <SortSheet />
                 </div>
             </div>
         </div>

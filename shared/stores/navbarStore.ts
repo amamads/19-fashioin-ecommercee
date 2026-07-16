@@ -1,19 +1,23 @@
 import { create } from "zustand";
 
 type NavbarStoreState = {
+  hiddenNavbar: boolean,
   mainMenuOpen: boolean;
   searchMenuOpen: boolean;
   categoriesMenuOpen: boolean;
+  setHiddenNavbar: (bool: boolean) => void,
   toggleMainMenuOpen: () => void;
   toggleSearchMenuOpen: () => void;
-  toggleCategoriesMenuOpen: (bool:boolean|null) => void;
+  toggleCategoriesMenuOpen: (bool: boolean | null) => void;
   closeMenus: () => void;
 };
 
 export const useNavbarStore = create<NavbarStoreState>((set) => ({
+  hiddenNavbar: false,
   mainMenuOpen: false,
   searchMenuOpen: false,
   categoriesMenuOpen: false,
+  setHiddenNavbar: (bool) => set({ hiddenNavbar: bool }),
   toggleMainMenuOpen: () =>
     set((state) => ({
       mainMenuOpen: !state.mainMenuOpen,
@@ -38,7 +42,10 @@ export const useNavbarStore = create<NavbarStoreState>((set) => ({
 }));
 
 export const selectMainMenuOpen = (s: NavbarStoreState) => s.mainMenuOpen;
+export const selectHiddenNavbar = (s: NavbarStoreState) => s.hiddenNavbar;
 export const selectSearchMenuOpen = (s: NavbarStoreState) => s.searchMenuOpen;
+export const selectSetHiddenNavbar = (s: NavbarStoreState) =>
+  s.setHiddenNavbar;
 export const selectCategoriesMenuOpen = (s: NavbarStoreState) =>
   s.categoriesMenuOpen;
 export const selectToggleMainMenuOpen = (s: NavbarStoreState) =>
