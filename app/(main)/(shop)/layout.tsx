@@ -1,3 +1,9 @@
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/shared/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +18,29 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      - breadcrumb
+      {/* - breadcrumb */}
+      {/* <Breadcrumb className="">
+        <BreadcrumbList className="flex flex-nowrap overflow-x-auto no-scrollbar gap-1">
+          <BreadcrumbItem>صفحه اصلی</BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>دسته بندی محصولات</BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>لباس مجلسی</BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>لباس مجلس میدی </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb> */}
+      <Breadcrumb className="">
+        <BreadcrumbList className="bg-red-400 flex flex-nowrap overflow-x-auto no-scrollbar gap-1">
+          <BreadcrumbItem>صفحه اصلی</BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>دسته بندی محصولات</BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>لباس مجلسی</BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>لباس مجلس میدی </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       {children}
     </div>
   );
