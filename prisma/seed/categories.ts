@@ -77,7 +77,7 @@ export default async function seedCategories() {
       create: {
         name,
         slug,
-        badges,
+        // badges,
         order,
       },
     });

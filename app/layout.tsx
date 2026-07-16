@@ -7,7 +7,7 @@ import "./globals.css";
 export const vazir = localFont({
   src: [
     {
-      path: "../fonts/Vazir-light.ttf",
+      path: "../fonts/Vazir-Light.ttf",
       weight: "300",
       style: "normal",
     },

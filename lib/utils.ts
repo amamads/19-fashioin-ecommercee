@@ -8,3 +8,5 @@ export function cn(...inputs: ClassValue[]) {
 
 export const faSlugify = (slug: string) =>
   slugify(slug, { lower: true, strict: true });
+
+export const generateNumbers  = (length:number)=>Array.from({ length }, (_, i) => i+1)
