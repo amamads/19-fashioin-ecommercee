@@ -1,11 +1,18 @@
-'use client'
+"use client";
 
 import { CaptionSm, H6 } from "@/shared/components/atoms/Typography";
 import { Button } from "@/shared/components/ui/button";
 import paths from "@/shared/paths";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function CartFooter() {
+export default function CheckoutPagesFooter({
+  route,
+  btnLabel,
+}: {
+  route: string;
+  btnLabel: string;
+}) {
   const router = useRouter();
   const num = 8_260_000;
   return (
@@ -14,9 +21,7 @@ export default function CartFooter() {
         <CaptionSm>مبلغ پرداخت:</CaptionSm>
         <H6>{num.toLocaleString()}</H6>
       </span>
-      <Button onClick={() => router.push(paths.checkout.checkout)}>
-        ثبت سفارش
-      </Button>
+      <Button onClick={() => router.push(route)}>{btnLabel}</Button>
     </div>
   );
 }
