@@ -18,8 +18,8 @@
 
 ## 🔵 Phase 4: UI & Global Layouts
 - [x] **11. Global Layout Setup** (Create Root Layout, Navbar, Footer, and Providers)
-- [ ] **12. Atomic Components** (Build reusable UI: Button, Input, Card, Modal)
-- [ ] **13. Pages & UI Construction** (Build Home, Products, Cart, and Checkout pages)
+- [x] **12. Atomic Components** (Build reusable UI: Button, Input, Card, Modal)
+- [x] **13. Pages & UI Construction** (Build Home, Products, Cart, and Checkout pages)
 
 ## 🟡 Phase 5: Logic & Core Features
 - [ ] **14. Server Actions & Business Logic** (Implement Cart, Orders, and CRUD operations)
