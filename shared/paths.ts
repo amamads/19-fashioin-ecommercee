@@ -2,25 +2,23 @@ const paths = {
   auth: {
     auth: "/auth",
   },
-  main: {
-    home: "/",
-    account: {
-      index: "/account",
-    },
-    checkout: {
-      cart: "/cart",
-      checkout: "/checkout",
-      payment: "/payment",
-    },
-    store: {
-      products: "/products",
-      productShow: (slug: string) => `/products/${slug}`,
-    },
-    info: {
-      about: "/about",
-      contactUs: "/contact-us",
-      terms: "/terms",
-    },
+  home: "/",
+  account: {
+    index: "/account",
+  },
+  checkout: {
+    cart: "/cart",
+    checkout: "/checkout",
+    payment: "/payment",
+  },
+  store: {
+    products: "/products",
+    productShow: (slug: string) => `/products/${slug}`,
+  },
+  info: {
+    about: "/about",
+    contactUs: "/contact-us",
+    terms: "/terms",
   },
 } as const;
 

@@ -14,7 +14,7 @@ export default function ContactInfo({ className }: PropsWithClassName) {
     },
     {
       icon: Phone,
-      text: "021 - 1234 5678 | 024 -1234 5655",
+      text: "5564 - 3522 - 021 | 7845 - 1234 - 024",
     },
     {
       icon: Mail,
@@ -25,9 +25,9 @@ export default function ContactInfo({ className }: PropsWithClassName) {
   return (
     <div className={className}>
       {contactInfoItems.map(({ icon: Icon, text }) => (
-        <div key={text} className="flex gap-2 py-2">
+        <div key={text} className="flex gap-2 py-2 items-center">
           <Icon className="size-4"/>
-          <BodyXs>{text}</BodyXs>
+          <BodyXs className="text-inherit">{text}</BodyXs>
         </div>
       ))}
     </div>

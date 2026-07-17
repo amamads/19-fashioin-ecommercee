@@ -6,7 +6,7 @@ export default function SocialMedia() {
   const icons = [FaInstagram, FaWhatsapp, FaTelegram];
   return (
     <div className="col-flex gap-4">
-      <BodyXs>ما را در شبکه های اجتماعی دنبال کنید:</BodyXs>
+      <BodyXs className="text-inherit">ما را در شبکه های اجتماعی دنبال کنید:</BodyXs>
       <div className="space-x-2  mr-auto">
         {icons.map((Icon, i) => (
           <Button key={i} variant="outlineForeground" size="icon">

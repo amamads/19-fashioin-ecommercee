@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Link href={paths.main.home}>
+    <Link href={paths.home}>
       <Image
         src="/logo4.png"
         alt="ams logo"

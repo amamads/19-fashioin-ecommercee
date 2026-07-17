@@ -1,5 +1,5 @@
 import db from "@/db";
-import { Product, Size } from "@/generated/prisma/client";
+import { Size } from "@/generated/prisma/client";
 
 const category = {
   name: "مجلسی",

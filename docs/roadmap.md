@@ -17,7 +17,7 @@
 - [x] **10. Seed Data** (Write scripts to populate database with test products)
 
 ## 🔵 Phase 4: UI & Global Layouts
-- [ ] **11. Global Layout Setup** (Create Root Layout, Navbar, Footer, and Providers)
+- [x] **11. Global Layout Setup** (Create Root Layout, Navbar, Footer, and Providers)
 - [ ] **12. Atomic Components** (Build reusable UI: Button, Input, Card, Modal)
 - [ ] **13. Pages & UI Construction** (Build Home, Products, Cart, and Checkout pages)
 
