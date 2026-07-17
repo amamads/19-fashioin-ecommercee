@@ -14,13 +14,13 @@ import {
 } from "@/shared/stores/navbarStore";
 import { MenuIcon, Search, User } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 import Logo from "../atoms/Logo";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import MainMenu from "./MainMenu";
 import MenuBtn from "./MenuBtn";
 import SearchMenu from "./SearchMenu";
-import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const searchMenuOpen = useNavbarStore(selectSearchMenuOpen);

@@ -7,7 +7,7 @@ import { PropsWithClassName } from "@/shared/types";
 import { ArrowLeft, ArrowRight, BadgePercent } from "lucide-react";
 import { PropsWithChildren, useRef } from "react";
 
-export default function ScrollXAreaWithBtns({ className, children }: PropsWithClassName & PropsWithChildren) {
+export default function ScrollXAreaWithBtns({ className, children, header }: PropsWithClassName & PropsWithChildren & { header: React.ReactNode }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const scrollRight = () =>
         scrollRef.current?.scrollBy({
@@ -22,10 +22,11 @@ export default function ScrollXAreaWithBtns({ className, children }: PropsWithCl
     return (
         <div className={cn(className, "col-flex gap-6")}>
             <header className="flex justify-between items-center">
-                <H5 className="flex gap-2">
+                {header}
+                {/* <H5 className="flex gap-2">
                     <BadgePercent className="size-5" />
                     <span>محصولات تخفیف‌دار</span>
-                </H5>
+                </H5> */}
                 <div className="space-x-2">
                     <Button
                         variant="outline"

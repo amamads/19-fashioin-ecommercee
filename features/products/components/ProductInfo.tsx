@@ -8,6 +8,7 @@ import ColorCheckbox from "../atoms/ColorCheckbox";
 import { SizeCheckbox } from "../atoms/SizeCheckbox";
 import ProductRating from "./ProductRating";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/shared/components/ui/accordion";
+import Comments from "@/features/home/components/Comments";
 
 const product = {
     id: "cmrfaq5qv0028j87csyh9evfa",
@@ -159,7 +160,9 @@ export default function ProductInfo({ className }: PropsWithClassName) {
                 </AccordionItem>
                 <AccordionItem value="comments">
                     <AccordionTrigger>نظرات مشتریان</AccordionTrigger>
-                    <AccordionContent>{description}</AccordionContent>
+                    <AccordionContent>
+                        <Comments />
+                    </AccordionContent>
                 </AccordionItem>
             </Accordion>
         </div>

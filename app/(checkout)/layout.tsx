@@ -1,3 +1,5 @@
+import LayoutContainer from "@/shared/components/LayoutContainer";
+import Navbar from "@/shared/components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-        - shoping route
-      {children}
+      <Navbar />
+      <LayoutContainer className="pb-16 pt-6">
+        {children}
+      </LayoutContainer>
     </div>
   );
 }

@@ -82,11 +82,9 @@ const product = {
 
 export default function ProductDetailsPage() {
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 pb-9">
             <ProductGallery images={product.images} />
             <ProductInfo />
-            - product tabs
-            - related products
         </div>
     );
 }
