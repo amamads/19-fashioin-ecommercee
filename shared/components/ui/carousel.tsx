@@ -93,16 +93,30 @@ function Carousel({
     setApi(api)
   }, [api, setApi])
 
-  React.useEffect(() => {
-    if (!api) return
-    onSelect(api)
-    api.on("reInit", onSelect)
-    api.on("select", onSelect)
+React.useEffect(() => {
+  if (!api) return
 
-    return () => {
-      api?.off("select", onSelect)
-    }
-  }, [api, onSelect])
+  // ۱. تعریف مستقیم تابع مدیریت رویداد که از API فعلی استفاده می‌کند
+  const handleSelect = () => {
+    onSelect(api)
+  }
+
+  // ۲. مقداردهی اولیه را با یک تاخیر بسیار کوتاه (Microtask) اجرا می‌کنیم 
+  // تا از چرخه رندر فعلی ری‌آکت خارج شود و خطای Cascading Render رخ ندهد.
+  queueMicrotask(() => {
+    handleSelect()
+  })
+
+  // ۳. گوش دادن به تغییرات اسلایدر
+  api.on("reInit", handleSelect)
+  api.on("select", handleSelect)
+
+  // ۴. پاکسازی کامل هر دو شنونده برای جلوگیری از نشت حافظه
+  return () => {
+    api.off("reInit", handleSelect)
+    api.off("select", handleSelect)
+  }
+}, [api, onSelect])
 
   return (
     <CarouselContext.Provider

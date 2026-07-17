@@ -7,6 +7,7 @@ import { BodySm } from "./atoms/Typography";
 import { Heart } from "lucide-react";
 import paths from "../paths";
 import { useRouter } from "next/navigation";
+import ColoredSquare from "../ColoredSquare";
 
 export default function Product({ className }: PropsWithClassName) {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Product({ className }: PropsWithClassName) {
     price = 3_502_000;
   return (
 
-    <button className={cn(className, "space-y-2.5 text-right")} onClick={() => router.push(paths.main.store.productShow('demo'))}>
+    <div className={cn(className, "space-y-2.5 text-right")} onClick={() => router.push(paths.main.store.productShow('demo'))}>
       <div className="relative">
         <Image
           src="/product-image2.png"
@@ -35,17 +36,18 @@ export default function Product({ className }: PropsWithClassName) {
       <BodySm>لباس میدی مدرن رایا</BodySm>
       <div className="flex gap-1">
         {colors.map(({ hex }) => (
-          <div
-            key={hex}
-            className="size-5 rounded-xs"
-            style={{ backgroundColor: hex }}
-          />
+          <ColoredSquare key={hex} hex={hex} />
+          // <div
+          //   key={hex}
+          //   className="size-5 rounded-xs"
+          //   style={{ backgroundColor: hex }}
+          // />
         ))}
       </div>
       <BodySm>
         <span>{price.toLocaleString("fa")}</span>
         <span>تومان</span>
       </BodySm>
-    </button>
+    </div>
   );
 }

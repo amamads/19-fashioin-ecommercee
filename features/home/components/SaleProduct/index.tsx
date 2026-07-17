@@ -2,13 +2,13 @@
 
 import { cn } from "@/lib/utils";
 import { H5 } from "@/shared/components/atoms/Typography";
+import Product from "@/shared/components/Product";
 import { Button } from "@/shared/components/ui/button";
 import { PropsWithClassName } from "@/shared/types";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, BadgePercent } from "lucide-react";
 import { useRef } from "react";
-import Comment from "./Comment";
 
-export default function Comments({ className }: PropsWithClassName) {
+export default function SaleProducts({ className }: PropsWithClassName) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollRight = () =>
     scrollRef.current?.scrollBy({
@@ -20,14 +20,12 @@ export default function Comments({ className }: PropsWithClassName) {
       behavior: "smooth",
       left: -200,
     });
-
   return (
     <div className={cn(className, "col-flex gap-6")}>
       <header className="flex justify-between items-center">
         <H5 className="flex gap-2">
-          رضایت شما
-          <br />
-          ارزشمند ترین دارایی ماست
+          <BadgePercent className="size-5" />
+          <span>محصولات تخفیف‌دار</span>
         </H5>
         <div className="space-x-2">
           <Button
@@ -48,9 +46,12 @@ export default function Comments({ className }: PropsWithClassName) {
           </Button>
         </div>
       </header>
-      <div className="flex overflow-x-auto gap-3 no-scrollbar" ref={scrollRef}>
+      <div
+        className="flex overflow-x-auto gap-3 no-scrollbar"
+        ref={scrollRef}
+      >
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-          <Comment key={i} />
+            <Product key={i} />
         ))}
       </div>
     </div>

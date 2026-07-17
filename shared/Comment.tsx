@@ -1,12 +1,11 @@
+import ProductRating from "@/features/products/components/ProductRating";
 import {
   BodySm,
   Caption,
   CaptionSm,
 } from "@/shared/components/atoms/Typography";
 import { Avatar, AvatarImage } from "@/shared/components/ui/avatar";
-import { Rating } from "@/shared/components/ui/rating";
-import { Ampersands, Calculator, HeartIcon } from "lucide-react";
-import { FaStar } from "react-icons/fa";
+import { Ampersands } from "lucide-react";
 
 export default function Comment() {
   return (
@@ -33,12 +32,7 @@ export default function Comment() {
         </CaptionSm>
       </main>
       <footer className="flex gap-1 mt-2">
-        <Rating
-          size={16}
-          precision={1}
-          value={3}
-          className="[&_[data-filled='false']_svg]:fill-primary/60 [&_[data-filled='false']_svg]:stroke-primary/30 [&_[data-filled='false']_svg]:stroke-1 [&_[data-filled='false']_svg]:text-primary/10 [&_[data-filled='true']_svg]:stroke-1 [&_[data-filled='true']_svg]:text-primary"
-        />
+        <ProductRating value={4} />
       </footer>
     </div>
   );

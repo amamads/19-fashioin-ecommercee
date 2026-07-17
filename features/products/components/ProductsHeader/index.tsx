@@ -7,7 +7,7 @@ import { PropsWithClassName } from "@/shared/types";
 import { ArrowRight, Funnel } from "lucide-react";
 import { useRouter } from "next/navigation";
 import SortSheet from "./SortSheet";
-import FiltersSheet from "./FiltersSheet.";
+import FiltersSheet from "../FilterSheet";
 
 export default function ProductsHeader({ className }: PropsWithClassName) {
     const router = useRouter();

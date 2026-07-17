@@ -1,6 +1,6 @@
 import Categories from "@/features/home/components/Catgories";
 import Comments from "@/features/home/components/Comments";
-import SaleProducts from "@/features/home/components/DiscountedProduct";
+import SaleProducts from "@/features/home/components/SaleProduct";
 import Hero from "@/features/home/components/Hero";
 import WhyUsSection from "@/features/home/components/WhyUsSection";
 
