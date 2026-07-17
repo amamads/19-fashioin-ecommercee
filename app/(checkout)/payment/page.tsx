@@ -1,4 +1,3 @@
-import CartFooter from "@/features/checkout/components/CartFooter";
 import CartPaymentDetails from "@/features/checkout/components/CartPaymentDetails";
 import CheckoutPagesFooter from "@/features/checkout/components/CeckoutPagesFooter";
 import GiftCard from "@/features/checkout/components/GiftCard";

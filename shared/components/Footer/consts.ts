@@ -8,12 +8,12 @@ export const helpfulLinksData = {
       href: paths.info.terms,
     },
     {
-      name: "حریم خصوصی",
-      href: paths.info.about,
+      name: "تماس با ما",
+      href: paths.info.contactUs,
     },
     {
-      name: "سوالات متداول",
-      href: paths.info.contactUs,
+      name: "درباره ما",
+      href: paths.info.about,
     },
   ],
 };
