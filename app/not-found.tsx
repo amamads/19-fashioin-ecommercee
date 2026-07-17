@@ -30,7 +30,7 @@ export default function NotFound() {
 
                 <Button
                     className="w-full mb-4"
-                    onClick={() => router.push(paths.main.home)}
+                    onClick={() => router.push(paths.home)}
                 >
                     برو به صفحه اصلی
                 </Button>

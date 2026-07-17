@@ -5,15 +5,15 @@ export const helpfulLinksData = {
   items: [
     {
       name: "قوانین و مقررات",
-      href: paths.main.info.terms,
+      href: paths.info.terms,
     },
     {
       name: "حریم خصوصی",
-      href: paths.main.info.about,
+      href: paths.info.about,
     },
     {
       name: "سوالات متداول",
-      href: paths.main.info.contactUs,
+      href: paths.info.contactUs,
     },
   ],
 };

@@ -85,8 +85,7 @@ export default function CategoryMenu() {
   }));
 
   function btnOnClick(slug: string) {
-    // router.push(paths.main.store.productShow(slug));
-    router.push(paths.main.store.products);
+    router.push(paths.store.products);
     closeMenus();
   }
 

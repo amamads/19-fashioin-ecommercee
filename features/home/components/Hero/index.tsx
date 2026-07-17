@@ -22,7 +22,7 @@ export default function Hero({ className }: PropsWithClassName) {
       <Badges className="mt-3" />
 
       <Button className="w-65 mt-6" asChild>
-        <Link className="space-x-2" href={paths.main.store.products}>
+        <Link className="space-x-2" href={paths.store.products}>
           <span>مشاهده کالکشن ها</span>
           <ArrowLeft />
         </Link>

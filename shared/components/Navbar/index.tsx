@@ -12,7 +12,7 @@ import {
   selectToggleSearchMenuOpen,
   useNavbarStore,
 } from "@/shared/stores/navbarStore";
-import { MenuIcon, Search, User } from "lucide-react";
+import { MenuIcon, Search, ShoppingCart, User } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 import Logo from "../atoms/Logo";
@@ -61,8 +61,14 @@ export default function Navbar() {
           <Logo />
           <div className="flex">
             <Button variant="ghost" size="none" asChild>
-              <Link href={paths.main.account.index}>
+              <Link href={paths.account.index}>
                 <User className="h-5 p-3.5 box-content text-muted-foreground" />
+              </Link>
+            </Button>
+
+            <Button variant="ghost" size="none" asChild>
+              <Link href={paths.checkout.cart}>
+                <ShoppingCart className="h-5 p-3.5 box-content text-muted-foreground" />
               </Link>
             </Button>
 

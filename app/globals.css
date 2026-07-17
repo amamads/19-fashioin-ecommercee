@@ -77,6 +77,48 @@
   --color-neutral-3: var(--neutral-3);
   --color-neutral-2: var(--neutral-2);
   --color-neutral-1: var(--neutral-1);
+
+  
+  --color-success: var(--success);
+  --color-success-shade-4: var(--success-shade-4);
+  --color-success-shade-3: var(--success-shade-3);
+  --color-success-shade-2: var(--success-shade-2);
+  --color-success-shade-1: var(--success-shade-1);
+  --color-success-tint-4: var(--success-tint-4);
+  --color-success-tint-3: var(--success-tint-3);
+  --color-success-tint-2: var(--success-tint-2);
+  --color-success-tint-1: var(--success-tint-1);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-shade-4: var(--destructive-shade-4);
+  --color-destructive-shade-3: var(--destructive-shade-3);
+  --color-destructive-shade-2: var(--destructive-shade-2);
+  --color-destructive-shade-1: var(--destructive-shade-1);
+  --color-destructive-tint-4: var(--destructive-tint-4);
+  --color-destructive-tint-3: var(--destructive-tint-3);
+  --color-destructive-tint-2: var(--destructive-tint-2);
+  --color-destructive-tint-1: var(--destructive-tint-1);
+
+  --color-warning: var(--warning);
+  --color-warning-shade-4: var(--warning-shade-4);
+  --color-warning-shade-3: var(--warning-shade-3);
+  --color-warning-shade-2: var(--warning-shade-2);
+  --color-warning-shade-1: var(--warning-shade-1);
+  --color-warning-tint-4: var(--warning-tint-4);
+  --color-warning-tint-3: var(--warning-tint-3);
+  --color-warning-tint-2: var(--warning-tint-2);
+  --color-warning-tint-1: var(--warning-tint-1);
+  
+  --color-info: var(--info);
+  --color-info-shade-4: var(--info-shade-4);
+  --color-info-shade-3: var(--info-shade-3);
+  --color-info-shade-2: var(--info-shade-2);
+  --color-info-shade-1: var(--info-shade-1);
+  --color-info-tint-4: var(--info-tint-4);
+  --color-info-tint-3: var(--info-tint-3);
+  --color-info-tint-2: var(--info-tint-2);
+  --color-info-tint-1: var(--info-tint-1);
+
 }
 
 :root {

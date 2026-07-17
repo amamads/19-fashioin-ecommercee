@@ -20,19 +20,19 @@ import CategoryMenu from "./CategoryMenu";
 const items = [
   {
     title: "صفحه اصلی",
-    href: paths.main.home,
+    href: paths.home,
   },
   {
     title: "دسته بندی ها",
-    href: paths.main.store.products,
+    href: paths.store.products,
   },
   {
     title: "تخفیف دار ها",
-    href: paths.main.store.products,
+    href: paths.store.products,
   },
   {
     title: "درباره ما",
-    href: paths.main.info.about,
+    href: paths.info.about,
   },
 ];
 
@@ -46,7 +46,7 @@ export default function MainMenu() {
   const router = useRouter();
 
   function btnOnClick(href: string) {
-    if (href === paths.main.store.products) return toggleCategoriesMenuOpen(true);
+    if (href === paths.store.products) return toggleCategoriesMenuOpen(true);
     router.push(href);
     closeMenus();
   }
