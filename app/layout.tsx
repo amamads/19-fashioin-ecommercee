@@ -51,7 +51,8 @@ export default function RootLayout({
       dir="rtl"
       className={cn("h-full", "antialiased", vazir.className)}
     >
-      <body className="min-h-full max-w-360 min-w-97.5 mx-auto">
+      {/* <body className="min-h-full max-w-360 min-w-97.5 mx-auto"> */}
+      <body className="min-h-full max-w-97.5 mx-auto">
         <MainProvider>{children}</MainProvider>
       </body>
     </html>
