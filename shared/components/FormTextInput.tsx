@@ -9,7 +9,6 @@ export default function FormTextInput({
   ...props
 }: {
   name: string;
-  // errors: FieldErrorType;
   errors: string[] | undefined | FieldErrorType;
   defaultValue?: string;
   floatingLabel: string;

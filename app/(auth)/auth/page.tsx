@@ -2,7 +2,6 @@
 
 import Login from "@/features/auth/components/Login";
 import Register from "@/features/auth/components/Register";
-import Register2 from "@/features/auth/components/Register copy";
 import { signOut } from "@/lib/auth-client";
 import Logo from "@/shared/components/atoms/Logo";
 import { H4, H5 } from "@/shared/components/atoms/Typography";
@@ -28,8 +27,7 @@ export default function LoginPage() {
       content: <Register />,
     },
   ];
-  const { isLoggedIn, user } = useAuth();
-  console.log(user);
+  const { user } = useAuth();
   return (
     <div className="px-default pt-20 col-flex gap-12 items-center min-h-screen">
       <div>
@@ -39,10 +37,15 @@ export default function LoginPage() {
           <span className="text-primary"> AMS </span>
           خوش آمدید
         </H5>
-        <H4>{user?.name}</H4>
       </div>
-      {isLoggedIn ? (
-        <Button onClick={() => signOut()}>sign out</Button>
+      {user ? (
+        <div className="flex  flex-col gap-5">
+          <H4>
+            <span className='text-primary font-semibold'>{user.name} </span>
+            شما وارد شده اید
+          </H4>
+          <Button onClick={() => signOut()}>خروج</Button>
+        </div>
       ) : (
         <Tabs defaultValue={tabs[1].value} className="w-full">
           <TabsList className="w-full">
@@ -53,7 +56,7 @@ export default function LoginPage() {
             ))}
           </TabsList>
           {tabs.map(({ content, value }) => (
-            <TabsContent value={value} key={value} className='py-6'>
+            <TabsContent value={value} key={value} className="py-6">
               {content}
             </TabsContent>
           ))}
