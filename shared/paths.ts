@@ -1,6 +1,6 @@
 const paths = {
   auth: {
-    auth: "/auth",
+    index: "/auth",
   },
   home: "/",
   account: {

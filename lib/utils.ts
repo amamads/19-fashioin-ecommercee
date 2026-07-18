@@ -13,6 +13,3 @@ export const generateNumbers = (length: number) => Array.from({ length }, (_, i)
 
 export const DiscountCalculation = (price: number, comparePrice: number) =>
   price !== comparePrice ? Math.round(100 - ((price * 100) / comparePrice)) : null;
-
-// export function DiscountCalculation(price: number, comparePrice: number) {
-//   if (price !== comparePrice)  Math.round(100 - ((price * 100) / comparePrice));

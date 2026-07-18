@@ -21,16 +21,16 @@ import { Separator } from "../ui/separator";
 import MainMenu from "./MainMenu";
 import MenuBtn from "./MenuBtn";
 import SearchMenu from "./SearchMenu";
+import UserDropdown from "./UserDropdown";
 
 export default function Navbar() {
   const searchMenuOpen = useNavbarStore(selectSearchMenuOpen);
   const mainMenuOpen = useNavbarStore(selectMainMenuOpen);
   const toggleSearchMenuOpen = useNavbarStore(selectToggleSearchMenuOpen);
   const toggleMainMenuOpen = useNavbarStore(selectToggleMainMenuOpen);
-  const closeMenus = useNavbarStore(selectCloseMenus)
-  const hiddenNavbar = useNavbarStore(selectHiddenNavbar)
-  const setHiddenNavbar = useNavbarStore(selectSetHiddenNavbar)
-
+  const closeMenus = useNavbarStore(selectCloseMenus);
+  const hiddenNavbar = useNavbarStore(selectHiddenNavbar);
+  const setHiddenNavbar = useNavbarStore(selectSetHiddenNavbar);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -49,22 +49,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-
   return (
     <>
       <div
         className={cn(
           "sticky top-0 z-50 bg-background transition-transform duration-300",
           hiddenNavbar ? "-translate-y-full" : "translate-y-0",
-        )}>
+        )}
+      >
         <nav className="flex justify-between items-center py-4 px-default z-20">
           <Logo />
           <div className="flex">
-            <Button variant="ghost" size="none" asChild>
-              <Link href={paths.account.index}>
-                <User className="h-5 p-3.5 box-content text-muted-foreground" />
-              </Link>
-            </Button>
+            <UserDropdown />
 
             <Button variant="ghost" size="none" asChild>
               <Link href={paths.checkout.cart}>
