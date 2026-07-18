@@ -47,7 +47,7 @@ export default function LoginPage() {
           <Button onClick={() => signOut()}>خروج</Button>
         </div>
       ) : (
-        <Tabs defaultValue={tabs[1].value} className="w-full">
+        <Tabs defaultValue={tabs[0].value} className="w-full">
           <TabsList className="w-full">
             {tabs.map(({ title, value }) => (
               <TabsTrigger value={value} key={value}>

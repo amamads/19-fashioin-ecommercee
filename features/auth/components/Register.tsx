@@ -25,10 +25,6 @@ export default function Register() {
   } = useForm<RegisterSchemaType>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
-      // name: "amamads",
-      // email: "amir.1rpm@gmail.com",
-      // password: "amir1385",
-      // confirmPassword: "amir1385",
     },
   });
 
@@ -40,18 +36,30 @@ export default function Register() {
         name: data.name,
       },
       {
-        onError(res) {
+        onError: (res) => {
           const { error } = res;
-          let message = "ثبت‌نام با خطا مواجه شد. لطفاً دوباره تلاش کنید.";
+          let message = "ثبت‌ نام با خطا مواجه شد. لطفاً دوباره تلاش کنید.";
 
-          if (error.status === 422)
+          if (error.code === "USER_ALREADY_EXISTS" || error.status === 422) {
             message = "کاربری با این ایمیل قبلاً ثبت نام کرده است.";
-          else message = "ارتباط با سرور برقرار نشد. لطفاً بعداً تلاش کنید.";
+
+            setError("email", { type: "server", message });
+            toast.error(message);
+            return;
+          }
+
+          if (error.code === "PASSWORD_TOO_SHORT") {
+            message = "رمز عبور بسیار کوتاه است.";
+            setError("password", { type: "server", message });
+            toast.error(message);
+            return;
+          }
+
           toast.error(message);
-          setError("root", { message });
+          setError("root", { type: "server", message });
         },
-        onSuccess() {
-          toast.success("ثبت شما با موفقیت انجام شد");
+        onSuccess: () => {
+          toast.success("ثبت‌نام شما با موفقیت انجام شد.");
           router.replace(paths.home);
         },
       },
@@ -65,6 +73,7 @@ export default function Register() {
           control={control}
           render={({ field, fieldState: { error } }) => (
             <FormTextInput
+              showAlwaysFloatingLabel
               {...field}
               floatingLabel="نام یا نام مستعار"
               errors={error}
@@ -75,14 +84,25 @@ export default function Register() {
           name="email"
           control={control}
           render={({ field, fieldState: { error } }) => (
-            <FormTextInput {...field} floatingLabel="ایمیل" errors={error} />
+            <FormTextInput
+              showAlwaysFloatingLabel
+              {...field}
+              floatingLabel="ایمیل"
+              errors={error}
+            />
           )}
         />
         <Controller
           name="password"
           control={control}
           render={({ field, fieldState: { error } }) => (
-            <FormTextInput {...field} floatingLabel="رمز عبور" errors={error} />
+            <FormTextInput
+              showAlwaysFloatingLabel
+              {...field}
+              floatingLabel="رمز عبور"
+              errors={error}
+              passwordInput
+            />
           )}
         />
         <Controller
@@ -90,9 +110,11 @@ export default function Register() {
           control={control}
           render={({ field, fieldState: { error } }) => (
             <FormTextInput
+              showAlwaysFloatingLabel
               {...field}
               floatingLabel="رمز عبور مجدد"
               errors={error}
+              passwordInput
             />
           )}
         />

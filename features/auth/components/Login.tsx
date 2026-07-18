@@ -1,50 +1,99 @@
 "use client";
 
-import { loginAction } from "@/actions/login.action";
-import { registerAction } from "@/actions/register.action";
+import { signIn, signUp } from "@/lib/auth-client";
 import FormTextInput from "@/shared/components/FormTextInput";
 import { Button } from "@/shared/components/ui/button";
 import { FieldError, FieldGroup } from "@/shared/components/ui/field";
-import useFormValidation from "@/shared/hooks/useFormValidation";
-import { registerSchema } from "@/shared/schemas/register.schema";
-import { useActionState } from "react";
+import paths from "@/shared/paths";
+import { loginSchema, LoginSchemaType } from "@/shared/schemas/login.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 export default function Login() {
-  const [state, action, isPending] = useActionState(loginAction, {
-    errors: {},
-    values: {
-      email: "amir.1rpm@gmail.com",
+  const router = useRouter();
+
+  const {
+    control,
+    handleSubmit,
+    setError,
+    formState: { isSubmitting, errors },
+  } = useForm<LoginSchemaType>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      // name: "amamads",
+      // email: "amir.1rpm@gmail.com",
     },
   });
-  const [handleInputChange, errors] = useFormValidation(registerSchema, state);
-  const values = state.values;
 
+  async function submitFrom(data: LoginSchemaType) {
+    await signIn.email(
+      {
+        email: data.email,
+        password: data.password,
+      },
+      {
+        onError(res) {
+          const { error } = res;
+          let message = "ورود با خطا مواجه شد. لطفاً دوباره تلاش کنید.";
+
+          if (
+            error.status === 401 ||
+            error.code === "INVALID_EMAIL_OR_PASSWORD"
+          ) {
+            message = "ایمیل یا رمز عبور اشتباه است.";
+          } else if (error.status === 403) {
+            message = "حساب کاربری شما فعال یا تایید نشده است.";
+          }
+
+          toast.error(message);
+          setError("root", { type: "server", message });
+        },
+        onSuccess() {
+          toast.success("خوش آمدید! ورود با موفقیت انجام شد.");
+          router.replace(paths.home);
+        },
+      },
+    );
+  }
   return (
-    <form action={action}>
+    <form onSubmit={handleSubmit(submitFrom)}>
       <FieldGroup>
-        <FormTextInput
+        <Controller
           name="email"
-          errors={errors.email}
-          defaultValue={values?.email}
-          floatingLabel="ایمیل"
-          onChange={handleInputChange}
-          showAlwaysFloatingLabel
+          control={control}
+          render={({ field, fieldState: { error } }) => (
+            <FormTextInput
+              {...field}
+              floatingLabel="ایمیل"
+              errors={error}
+              showAlwaysFloatingLabel
+            />
+          )}
         />
-        <FormTextInput
+        <Controller
           name="password"
-          errors={errors.password}
-          floatingLabel="رمز عبور"
-          type="password"
-          onChange={handleInputChange}
-          showAlwaysFloatingLabel
+          control={control}
+          render={({ field, fieldState: { error } }) => (
+            <FormTextInput
+              {...field}
+              floatingLabel="رمز عبور"
+              errors={error}
+              showAlwaysFloatingLabel
+              passwordInput
+            />
+          
+          )}
         />
       </FieldGroup>
 
-      <Button type="submit" className="w-full mt-4">
-        {isPending ? "در حال ورود ..." : "ورود"}
+      <Button type="submit" className="w-full mt-4" disabled={isSubmitting}>
+        {isSubmitting ? "در حال ورود..." : "ورود"}
       </Button>
-
-      {errors._form && <FieldError>{errors._form.join(", ")}</FieldError>}
+      {errors.root && (
+        <FieldError className="mt-5">{errors.root?.message}</FieldError>
+      )}
     </form>
   );
 }
